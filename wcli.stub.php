@@ -23,7 +23,7 @@ const VK_RBUTTON             = 0x02; // Right mouse button
 const VK_CANCEL              = 0x03; // Control-break processing
 const VK_MBUTTON             = 0x04; // Middle mouse button (three-button mouse)
 const VK_XBUTTON1            = 0x05; // X1 mouse button
-const VK_XBUTTON2            = 0x06; // X2 mouse button                   
+const VK_XBUTTON2            = 0x06; // X2 mouse button
 const VK_BACK                = 0x08; // BACKSPACE key
 const VK_TAB                 = 0x09; // TAB key
 const VK_CLEAR               = 0x0C; // CLEAR key
@@ -192,58 +192,43 @@ const VK_X                   = 0x58; // X key
 const VK_Y                   = 0x59; // Y key
 const VK_Z                   = 0x5A; // Z key
 
-
-
 /**
  * Get the console output handle.
- *
- * @return int|bool Output handle
+ * @return int|bool
  */
-function wcli_get_output_handle(): int|bool {}
-
+function wcli_get_output_handle() : int|bool{}
 
 /**
  * Get the console input handle.
- *
- * @return int|bool Input handle
+ * @return int|bool
  */
-function wcli_get_input_handle(): int|bool {}
-
+function wcli_get_input_handle() : int|bool{}
 
 /**
  * Get the console window handle.
- *
- * @return int|bool Window handle
+ * @return int|bool
  */
-function wcli_get_window_handle(): int|bool {}
-
+function wcli_get_window_handle() : int|bool{}
 
 /**
- * Return the console title.
- *
- * @return string|bool The console title, otherwise false.
+ * Retrun the console title, otherwise false.
+ * @return string|bool
  */
-function wcli_get_console_title(): string|bool {}
-
+function wcli_get_console_title() : string|bool{}
 
 /**
  * Set the console title.
- *
- * @param string $title The console title
- *
- * @return bool True if success, else false.
+ * @param string $title
+ * @return bool
  */
-function wcli_set_console_title(string $title): bool {}
-
+function wcli_set_console_title(string $title) : bool{}
 
 /**
  * Retrieve the size and the scrolling in characters of the console.
  * Return an array [w, h, x, y]
- *
- * @return array|bool Return the console size or FALSE.
+ * @return array|bool
  */
-function wcli_get_console_size(): array|bool {}
-
+function wcli_get_console_size() : array|bool{}
 
 /**
  * Set the console size in characters.
@@ -255,17 +240,14 @@ function wcli_get_console_size(): array|bool {}
  *
  * @return bool True if success, else false.
  */
-function wcli_set_console_size(int $w, int $h, bool $force = false): bool {}
-
+function wcli_set_console_size(int $w, int $h, bool $force = false) : bool{}
 
 /**
  * Retrieve console buffer size in characters.
  * Return an array [w, h]
- *
- * @return array|bool Return the buffer size or FALSE.
+ * @return array|bool
  */
-function wcli_get_buffer_size(): array|bool {}
-
+function wcli_get_buffer_size() : array|bool{}
 
 /**
  * Set the console buffer size in characters.
@@ -277,17 +259,14 @@ function wcli_get_buffer_size(): array|bool {}
  *
  * @return bool True if success, else false.
  */
-function wcli_set_buffer_size(int $w, int $h): bool {}
-
+function wcli_set_buffer_size(int $w, int $h) : bool{}
 
 /**
  * Retrieves the input code page used by the console.
  * See: https://learn.microsoft.com/en-us/windows/win32/intl/code-page-identifiers
- *
- * @return int Code Page ID
+ * @return int
  */
-function wcli_get_code_page(): int {}
-
+function wcli_get_code_page() : int{}
 
 /**
  * Set the input code page used by the console.
@@ -297,373 +276,280 @@ function wcli_get_code_page(): int {}
  *
  * @return bool True if success, else false.
  */
-function wcli_set_code_page(int $cpID): bool {}
-
+function wcli_set_code_page(int $cp) : bool{}
 
 /**
  * Retrieve console font size in pixels.
  * Return an array [width, height]
- *
  * @return array|bool The font size, otherwise false.
  */
-function wcli_get_font_size(): array|bool {}
-
+function wcli_get_font_size() : array|bool{}
 
 /**
  * Get the foreground color.
- *
- * @return int Color Constant
+ * @return int|bool
  */
-function wcli_get_foreground_color(): int {}
-
+function wcli_get_foreground_color() : int|bool{}
 
 /**
  * Set the foreground color.
- *
- * @param int $color Color Constant
- *
- * @return bool True if success, else false.
+ * @param int $fore
+ * @return bool
  */
-function wcli_set_foreground_color(int $color): bool {}
-
+function wcli_set_foreground_color(int $fore) : bool{}
 
 /**
  * Get the background color.
- *
- * @return int Color Constant
+ * @return int|bool
  */
-function wcli_get_background_color(): int {}
-
+function wcli_get_background_color() : int|bool{}
 
 /**
  * Set the background color.
- *
- * @param int $color Color constant
- *
- * @return bool True if success, else false.
+ * @param int $back
+ * @return bool
  */
-function wcli_set_background_color(int $color): bool {}
-
+function wcli_set_background_color(int $back) : bool{}
 
 /**
  * Retrieve console foreground and background colors.
  * Return an array [foreColor, backColor]
- *
- * @return array|bool The array of colors or False
+ * @return array|bool
  */
-function wcli_get_colors(): array|bool {}
-
+function wcli_get_colors() : array|bool{}
 
 /**
  * Set the foreground and background color at once.
- *
- * @param int $fore Foreground color constant
- * @param int $back Background color constant
- *
- * @return bool True if success, else false.
+ * @param int $fore
+ * @param int $back
+ * @return bool
  */
-function wcli_set_colors(int $fore, int $back): bool {}
-
+function wcli_set_colors(int $fore, int $back) : bool{}
 
 /**
  * Swap foreground and background colors.
- *
- * @return bool True if success, else false.
+ * @return bool
  */
-function wcli_inverse_colors(): bool {}
-
+function wcli_inverse_colors() : bool{}
 
 /**
  * Reset console colors to default.
- *
- * @return bool True if success, else false.
+ * @return bool
  */
-function wcli_reset_colors(): bool {}
-
+function wcli_reset_colors() : bool{}
 
 /**
  * Hide console cursor.
- *
- * @return bool True if success, else false.
+ * @return bool
  */
-function wcli_hide_cursor(): bool {}
-
+function wcli_hide_cursor() : bool{}
 
 /**
  * Show console cursor.
- *
- * @return bool True if success, else false.
+ * @return bool
  */
-function wcli_show_cursor(): bool {}
-
+function wcli_show_cursor() : bool{}
 
 /**
  * Retrieve cursor visibility.
- *
- * @return bool True if visible, else false.
+ * @return bool
  */
-function wcli_get_cursor_visibility(): bool {}
-
+function wcli_get_cursor_visibility() : bool{}
 
 /**
  * Set cursor visibility.
- *
- * @param bool $visible True to show, false to hide.
- *
- * @return bool True if success, else false.
+ * @param bool $visible
+ * @return bool
  */
-function wcli_set_cursor_visibility(bool $visible): bool {}
-
+function wcli_set_cursor_visibility(bool $visible) : bool{}
 
 /**
  * Retrieve cursor size.
  * The size value is between 0 and 100.
- *
- * @return int|bool The cursor size if success, else false.
+ * @return int|bool
  */
-function wcli_get_cursor_size(): int|bool {}
-
+function wcli_get_cursor_size() : int|bool{}
 
 /**
- * Set cursor size.
- *
- * @param int $size Cursor size between 0 and 100.
- *
- * @return bool True if success, else false.
+ * Set cursor size. Cursor size between 0 and 100.
+ * @param int $size
+ * @return bool
  */
-function wcli_set_cursor_size(int $size): bool {}
-
+function wcli_set_cursor_size(int $size) : bool{}
 
 /**
  * Retrieve cursor position.
  * Return an array [x, y]
- *
- * @return array|bool The cursor position or false.
+ * @return array|bool
  */
-function wcli_get_cursor_position(): array|bool {}
-
+function wcli_get_cursor_position() : array|bool{}
 
 /**
  * Set cursor position.
- *
- * @param int $x X position in characters
- * @param int $y Y position in characters
- *
- * @return bool True if success, else false.
+ * @param int $x
+ * @param int $y
+ * @return bool
  */
-function wcli_set_cursor_position(int $x, int $y): bool {}
-
+function wcli_set_cursor_position(int $x, int $y) : bool{}
 
 /**
  * Move cursor position relatively to the current cursor position.
- *
- * @param int $x X move in characters
- * @param int $y Y move in characters
- *
- * @return bool True if success, else false.
+ * @param int $x
+ * @param int $y
+ * @return bool
  */
-function wcli_move_cursor(int $x, int $y): bool {}
-
+function wcli_move_cursor(int $x, int $y) : bool{}
 
 /**
  * Echo string with colors. Foreground and background colors are optionals.
- *
- * @param string $str String to be echo.
- * @param int $fore Foreground color constant
- * @param int $back Background color constant
- *
- * @return bool True if success, else false.
+ * @param string $str
+ * @param int|null $fore
+ * @param int|null $back
+ * @return bool
  */
-function wcli_echo(string $str, int $fore = null, int $back = null): bool {}
-
+function wcli_echo(string $str, ?int $fore = '', ?int $back = '') : bool{}
 
 /**
  * Print string with colors at the x-y position without changing cursor position.
- *
- * @param string $str String to be print
- * @param int $x X position in characters
- * @param int $y Y position in characters
- * @param int $fore Foreground color constant
- * @param int $back Background color constant
- *
- * @return bool True if success, else false.
+ * @param string $str
+ * @param int|null $x
+ * @param int|null $y
+ * @param int|null $fore
+ * @param int|null $back
+ * @return bool
  */
-function wcli_print(string $str, int $x = null, int $y = null, int $fore = null, int $back = null): bool {}
-
+function wcli_print(string $str, ?int $x = '', ?int $y = '', ?int $fore = '', ?int $back = '') : bool{}
 
 /**
  * Clear the console.
- *
- * @return bool True if success, else false.
+ * @return bool
  */
-function wcli_clear(): bool {}
-
+function wcli_clear() : bool{}
 
 /**
  * Method fill rect with character and colors.
- *
- * @param int $c Character to fill
- * @param int $x X position of the rect
- * @param int $y Y position of the rect
- * @param int $w Width of the rect
- * @param int $h Height of the rect
- * @param int $fore Foreground color constant
- * @param int $back Background color constant
- *
- * @return bool True if success, else false.
+ * @param int $c
+ * @param int $x
+ * @param int $y
+ * @param int $w
+ * @param int $h
+ * @param int|null $fore
+ * @param int|null $back
+ * @return bool
  */
-function wcli_fill(int $c, int $x, int $y, int $w, int $h, int $fore = null, int $back = null): bool {}
-
+function wcli_fill(int $c, int $x, int $y, int $w, int $h, ?int $fore = '', ?int $back = '') : bool{}
 
 /**
  * Pause process and wait for a keyboard input.
- *
- * @return int|bool The input character otherwise false.
+ * @return int|bool
  */
-function wcli_get_key(): int|bool {}
-
+function wcli_get_key() : int|bool{}
 
 /**
  * Get an async keyboard input.
- *
- * @return int|bool The input character otherwise false.
+ * @return int|bool
  */
-function wcli_get_key_async(): int|bool {}
-
+function wcli_get_key_async() : int|bool{}
 
 /**
  * Flush console input buffer.
- *
- * @return bool True if success, else false.
+ * @return bool
  */
-function wcli_flush_input_buffer(): bool {}
-
+function wcli_flush_input_buffer() : bool{}
 
 /**
  * Verify if console window is on top.
- *
- * @return bool True if window is on top, otherwise false.
+ * @return bool
  */
-function wcli_is_on_top(): bool {}
-
+function wcli_is_on_top() : bool{}
 
 /**
  * Verify if console window is visible.
- *
- * @return bool True if window is visible, otherwise false.
+ * @return bool
  */
-function wcli_is_visible(): bool {}
-
+function wcli_is_visible() : bool{}
 
 /**
  * Retrieve console window area.
  * Return an array [x, y, width, height]
- *
- * @return array|bool The console window area array, otherwise false.
+ * @return array|bool
  */
-function wcli_get_window_area(): array|bool {}
-
+function wcli_get_window_area() : array|bool{}
 
 /**
  * Retrieve console window inner area.
  * Return an array [x, y, width, height]
- *
- * @return array|bool The console window inner area array, otherwise false.
+ * @return array|bool
  */
-function wcli_get_client_area(): array|bool {}
-
+function wcli_get_client_area() : array|bool{}
 
 /**
  * Minimize console window.
- *
- * @return bool True if success, else false.
+ * @return bool
  */
-function wcli_minimize(): bool {}
-
+function wcli_minimize() : bool{}
 
 /**
  * Maximize console window.
- *
- * @return bool True if success, else false.
+ * @return bool
  */
-function wcli_maximize(): bool {}
-
+function wcli_maximize() : bool{}
 
 /**
  * Restore console window.
- *
- * @return bool True if success, else false.
+ * @return bool
  */
-function wcli_restore(): bool {}
-
+function wcli_restore() : bool{}
 
 /**
  * Force console window to activate.
- *
- * @return bool True if success, else false.
+ * @return bool
  */
-function wcli_activate(): bool {}
-
+function wcli_activate() : bool{}
 
 /**
  * Flash console window.
- *
- * @param bool $invert If TRUE, the window is flashed from one state to the other.
- *
- * @return bool True if success, else false.
+ * @param bool|null $invert
+ * @return bool
  */
-function wcli_flash(bool $invert = false): bool {}
-
+function wcli_flash(?bool $invert = false) : bool{}
 
 /**
  * Bring console window to front.
- *
- * @return bool True if success, else false.
+ * @return bool
  */
-function wcli_bring_to_front(): bool {}
-
+function wcli_bring_to_front() : bool{}
 
 /**
  * Set console window position.
- *
- * @param int $x X position in pixels
- * @param int $y Y position in pixels
- *
- * @return bool True if success, else false.
+ * @param int $x
+ * @param int $y
+ * @return bool
  */
-function wcli_set_position(int $x, int $y): bool {}
-
+function wcli_set_position(int $x, int $y) : bool{}
 
 /**
  * Return module/executable full path.
- * Usefull for SAPI.
- *
- * @return string Module full path
+ * Useful for SAPI.
+ * @return string
  */
-function wcli_get_module_path(): string {}
-
+function wcli_get_module_path() : string{}
 
 /**
  * Get parent process ID.
- *
- * @return int|bool Parent process ID, otherwise false.
+ * @return int|bool
  */
-function wcli_get_parent_pid(): int|bool {}
-
+function wcli_get_parent_pid() : int|bool{}
 
 /**
  * Know if the process was lunch by a terminal.
- *
- * @return bool True if yes, otherwise false.
+ * @return bool
  */
-function wcli_is_cmd_call(): bool {}
-
+function wcli_is_cmd_call() : bool{}
 
 /**
  * Search filename in environment path.
- *
- * @param string $filename Filename to search for.
- *
- * @return string|bool The full path of the file, otherwise false.
+ * @param string $file
+ * @return string|bool
  */
-function wcli_where(string $filename): string|bool {}
+function wcli_where(string $file) : string|bool{}
